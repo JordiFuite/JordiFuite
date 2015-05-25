@@ -1,0 +1,46 @@
+.device-wrapper {
+  position: relative;
+  height: 550px;
+  .macbook {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/macbook.png');
+    background-size: 920px auto;
+    width: 920px;
+    height: 492px;
+    padding: 32px 145px;
+    img {
+      width: 640px;
+      height: 395px;
+    }
+  }
+  .mobile {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    background: url('../images/iphone.png');
+    background-size: 236px auto;
+    width: 236px;
+    height: 448px;
+    padding: 74px 40px;
+    img {
+      width: 153px;
+      height: 270px;
+    }
+  }
+  .tablet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url('../images/ipad.png');
+    background-size: 400px auto;
+    width: 400px;
+    height: 314px;
+    padding: 32px 37px;
+    img {
+      width: 335px;
+      height: 245px;
+    }
+  }
+}

@@ -1,0 +1,585 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"php",
+				"php"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
+				"slide",
+				"slideDown"
+			],
+			[
+				"Portfol",
+				"portfolioFirst"
+			],
+			[
+				"admin",
+				"admin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "templates/node--portfolio_item.tpl.php",
+			"settings":
+			{
+				"buffer_size": 5518,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/style.scss",
+			"settings":
+			{
+				"buffer_size": 264,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sass/partials/_portfolio.scss",
+			"settings":
+			{
+				"buffer_size": 854,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\n/**\n * @file\n * Bartik's theme implementation to display a single Drupal page.\n *\n * The doctype, html, head and body tags are not in this template. Instead they\n * can be found in the html.tpl.php template normally located in the\n * modules/system directory.\n *\n * Available variables:\n *\n * General utility variables:\n * - $base_path: The base URL path of the Drupal installation. At the very\n *   least, this will always default to /.\n * - $directory: The directory the template is located in, e.g. modules/system\n *   or themes/bartik.\n * - $is_front: TRUE if the current page is the front page.\n * - $logged_in: TRUE if the user is registered and signed in.\n * - $is_admin: TRUE if the user has permission to access administration pages.\n *\n * Site identity:\n * - $front_page: The URL of the front page. Use this instead of $base_path,\n *   when linking to the front page. This includes the language domain or\n *   prefix.\n * - $logo: The path to the logo image, as defined in theme configuration.\n * - $site_name: The name of the site, empty when display has been disabled\n *   in theme settings.\n * - $site_slogan: The slogan of the site, empty when display has been disabled\n *   in theme settings.\n * - $hide_site_name: TRUE if the site name has been toggled off on the theme\n *   settings page. If hidden, the \"element-invisible\" class is added to make\n *   the site name visually hidden, but still accessible.\n * - $hide_site_slogan: TRUE if the site slogan has been toggled off on the\n *   theme settings page. If hidden, the \"element-invisible\" class is added to\n *   make the site slogan visually hidden, but still accessible.\n *\n * Navigation:\n * - $main_menu (array): An array containing the Main menu links for the\n *   site, if they have been configured.\n * - $secondary_menu (array): An array containing the Secondary menu links for\n *   the site, if they have been configured.\n * - $breadcrumb: The breadcrumb trail for the current page.\n *\n * Page content (in order of occurrence in the default page.tpl.php):\n * - $title_prefix (array): An array containing additional output populated by\n *   modules, intended to be displayed in front of the main title tag that\n *   appears in the template.\n * - $title: The page title, for use in the actual HTML content.\n * - $title_suffix (array): An array containing additional output populated by\n *   modules, intended to be displayed after the main title tag that appears in\n *   the template.\n * - $messages: HTML for status and error messages. Should be displayed\n *   prominently.\n * - $tabs (array): Tabs linking to any sub-pages beneath the current page\n *   (e.g., the view and edit tabs when displaying a node).\n * - $action_links (array): Actions local to the page, such as 'Add menu' on the\n *   menu administration interface.\n * - $feed_icons: A string of all feed icons for the current page.\n * - $node: The node object, if there is an automatically-loaded node\n *   associated with the page, and the node ID is the second argument\n *   in the page's path (e.g. node/12345 and node/12345/revisions, but not\n *   comment/reply/12345).\n *\n * Regions:\n * - $page['header']: Items for the header region.\n * - $page['featured']: Items for the featured region.\n * - $page['highlighted']: Items for the highlighted content region.\n * - $page['help']: Dynamic help text, mostly for admin pages.\n * - $page['content']: The main content of the current page.\n * - $page['sidebar_first']: Items for the first sidebar.\n * - $page['triptych_first']: Items for the first triptych.\n * - $page['triptych_middle']: Items for the middle triptych.\n * - $page['triptych_last']: Items for the last triptych.\n * - $page['footer_firstcolumn']: Items for the first footer column.\n * - $page['footer_secondcolumn']: Items for the second footer column.\n * - $page['footer_thirdcolumn']: Items for the third footer column.\n * - $page['footer_fourthcolumn']: Items for the fourth footer column.\n * - $page['footer']: Items for the footer region.\n *\n * @see template_preprocess()\n * @see template_preprocess_page()\n * @see template_process()\n * @see bartik_process_page()\n * @see html.tpl.php\n */\n?>\n\n\n<header>\n  <div class=\"site-name\">\n    <div class=\"squeeze\">\n      <h1>\n        <a href=\"<?php print $front_page; ?>\" title=\"<?php print t('Home'); ?>\" rel=\"home\" id=\"logo\">\n          <<?php print $site_name; ?>\n        </a>\n      </h1>\n    </div>\n  </div>\n  <?php if ($main_menu): ?>\n  <nav>\n    <div class=\"squeeze\">\n      <a class=\"menu-trigger fa fa-bars\" href=\"#menu\"></a>\n      <?php print theme('links__system_main_menu', array(\n        'links' => $main_menu,\n        'attributes' => array(\n          'id' => 'main-menu-links',\n          'class' => array('links', 'clearfix'),\n        ),\n        'heading' => array(\n          'text' => t('Main menu'),\n          'level' => 'h2',\n          'class' => array('element-invisible'),\n        ),\n      ));\n      ?>\n    </div>\n  </nav>\n    <?php endif; ?>\n</header>\n<div id=\"big-wrapper\">\n  <?php if ($messages): ?>\n    <div class=\"main-wrapper\">\n      <div class=\"squeeze\">\n        <?php print $messages; ?>\n      </div>\n    </div>\n  <?php endif; ?>\n  <?php if ($page['slider']): ?>\n    <div class=\"slider-wrapper\">\n      <div class=\"squeeze\">\n        <?php print render($page['slider']); ?>\n      </div>\n      <button class=\"previous\">&lt;</button>\n      <button class=\"next\">&gt;</button>\n    </div>\n  <?php endif; ?>\n  <div class=\"main-wrapper\">\n    <div class=\"squeeze\">\n      <?php if (($title) && (!$is_front)): ?>\n        <h2 class=\"title\" id=\"page-title\">\n          <?php print $title; ?>\n        </h2>\n      <?php endif; ?>\n      <?php print render($page['content']); ?>\n      <?php print render($page['content_bottom']); ?>\n    </div>\n  </div>\n</div>\n\n",
+			"file": "templates/page.tpl.php",
+			"file_size": 5765,
+			"file_write_time": 130740435130000000,
+			"settings":
+			{
+				"buffer_size": 5766,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "html {\n  box-sizing: border-box;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n.backbutton {\n	text-decoration: none;\n}\nnav#main-menu,\n#button-previous,\n#button-next,\n.photo-description,\n.divorce-bar,\nfooter,\n#main-menu a,\n.main-content .col,\n.col button.read-more,\na.read-more,\n#sidebar_left .content,\nbutton,\ninput[type=submit] {\n	transition: background 0.5s;\n	background: #479992;\n	color: #FFFFFF;\n}\n.main-content .col button.read-more,\na.read-more,\n.colored-box .read-more {\n	border: 4px solid #F2F2F2;\n}\n.colored-box {\n	border-radius: 5px;\n  	padding: 15px;\n  	margin-top: 30px;\n\n}\n.colored-box img {\n	max-width: calc(100% + 30px);\n	height: auto;\n	margin: 15px -15px;\n}\n.prev a,\n.next a {\n    text-transform: uppercase;\n    display: block;\n    border: none;\n    padding: 10px 20px;\n    width: 121px;\n    margin-bottom: 10px;\n    position: fixed;\n    z-index: 9;\n    top: 50%;\n    font-size: 100px;\n    width:  100px;\n    text-decoration: none;\n}\n.next a {\n    left: calc(100% - 100px);\n    border-radius: 5px 0px 0px 5px;\n}\n\n.prev a {\n    left: 0;\n    border-radius: 0px 5px 5px 0px;\n}\n\n\n#button-previous:hover,\n#button-next:hover,\n#main-menu a:hover,\n.col button.read-more:hover,\na.read-more:hover,\nbutton:hover,\ninput[type=submit]:hover {\n	background: #316863;\n	transition: background 0.5s;\n}\nnav#main-menu a#logo {\n	background: none;\n}\n#block-views-mostviewed-block .content {\n	margin-top: 4px;\n}\n#block-block-3 .content {\n	margin-top: 3px;\n}\n#block-block-3 p,\n.views-field.views-field-title {\n	border-top: 1px solid white;\n	padding: 10px 0;\n	margin: 0;\n	color: white;\n	text-decoration: none;\n	text-transform: uppercase;\n}\n#block-block-3 p:first-child,\n.views-field.views-field-title:first-child {\n	border-top: none;\n}\n.views-field.views-field-title a {\n	color: white;\n	text-decoration: none;\n	text-transform: uppercase;\n}\nhtml {\n  box-sizing: border-box;\n}\n*, *:before, *:after {\n  box-sizing: inherit;\n}\n\nbutton,\ninput[type=submit] {\n	text-transform: uppercase;\n	display: block;\n	border: none;\n	border-radius: 5px;\n	padding: 10px 20px;\n}\n\nselect,\ninput,\ntextarea {\n	background-color: white;\n	text-transform: none;\n	display: block;\n	border-width: 1px;\n	border-style: solid;\n	font-size: 15px;\n	border-radius: 5px;\n	padding: 10px 20px;\n	max-width: 400px;\n	margin: 5px 0px;\n	height: 35px;\n}\nselect {\n	text-transform: uppercase;\n}\ntextarea {\n	max-width: none;\n	height: auto;\n}\nselect {\n	padding: 5px 20px;\n}\ninput[type=password] {\n	text-transform: none;\n	font-size: 25px;\n	padding: 5px 20px;\n	max-width: 400px;\n}\ninput[type=checkbox] {\n	display: inline;\n}\ninput:-webkit-autofill,\ntextarea:-webkit-autofill,\nselect:-webkit-autofill {\n  background-color: #fff !important;\n  color: rgb(0, 0, 0);\n\n}\n.websitename {\n  float: left;\n  font-size: 20px;\n  padding: 10px;\n  height: 44px;\n  text-transform: capitalize;\n  text-decoration: none;\n}\n.sliderbox {\n	position: absolute;\n	height: 60px;\n	padding: 15px;\n	font-size: 30px;\n	right: 60px;\n	bottom: 30px;\n	z-index: 50;\n}\n.sliderbox p {\n	margin: 0;\n}\n.sliderbox p a,\n.sliderbox p a:active,\n.sliderbox p a:focus,\n.sliderbox p a:hover,\n.sliderbox p a:visited {\n	text-decoration: none;\n	color: white;\n}\n.views-exposed-form .views-exposed-widget .form-submit {\n	margin: 5px 0;\n}\nbody {\n	background-color: #333A3C;\n	margin: 0;\n	font-family: arial;\n	font-size: 13px;\n}\nh2 {\n	font-weight: normal;\n	font-size: 22px;\n	color: inherit;\n	padding: 0;\n	margin: 0;\n}\nimg.logo {\n	float: left;\n	height: 35px;\n	margin: 0;\n}\n.squeeze {\n	width: 1000px;\n	margin: 0 auto;\n	color: #0D0D0D;\n}\n#sidebar_left {\n	float: left;\n	width: 212px;\n}\n#sidebar_left .content {\n	margin-top: 30px;\n	border-radius: 5px;\n	padding: 20px;\n	text-align: justify;\n}\n#sidebar_left {\n	float: left;\n	width: 212px;\n}\n#sidebar_left .views-exposed-form * {\n	width: 100%;\n}\n#sidebar_left .views-exposed-form .form-type-bef-link a {\n	text-transform: uppercase;\n	font-size: 14px;\n	border-bottom: 1px solid white;\n	padding: 13px 0px;\n	transition: background 0.5s;\n	display: block;\n	color: white;\n	text-decoration: none;\n}\n#sidebar_left .views-exposed-form .form-type-bef-link:first-child {\n	border-top: 1px solid white;\n}\n#content_right {\n	float: left;\n	width: 728px;\n}\n#websitename {\n	height: 100px;\n	font-size: 40px;\n	padding: 25px 0;\n	color: white;\n	text-transform: uppercase;\n	font-weight: bold;\n}\nnav#main-menu {\n	z-index: 99;\n	width: 1000px;\n	height: 44px;\n}\nnav#main-menu ul {\n	padding: 0;\n	float: right;\n	margin: 0\n}\nnav#main-menu li {\n	list-style: none;\n	float: left;\n}\nnav#main-menu .navigation a {\n	text-transform: uppercase;\n	font-size: 14px;\n	padding: 14px 30px;\n	transition: background-color 0.5s;\n	display: block;\n	text-decoration: none;\n	height: 100%;\n}\nnav#main-menu a#logo {\n	display: inline;\n}\n.menu-item > ul > li:first-child {\n	border-left: none;\n}\n.menu-item > ul > li:last-child {\n	border-right: none;\n}\n#slider {\n	height: 350px;\n	max-height: 350px;\n	overflow: hidden;\n	margin-bottom: -10px;\n	position: relative;\n}\n.slide-item {\n	position: absolute;\n}\n#slider img {\n	width: 1000px;\n}\n.photo-name {\n	position: absolute;\n	padding: 15px;\n	background-color: #0D0D0D;\n	color: #DBDBDB;\n	font-size: 16px;\n	margin-left: 40px;\n	margin-top: 210px;\n	text-transform: uppercase;\n}\n.photo-description {\n	position: absolute;\n	padding: 15px;\n	font-style: italic;\n	font-size: 14px;\n	margin-left: 40px;\n	margin-top: 266px;\n}\n#button-previous {\n	height: 60px;\n	width: 40px;\n	border-radius: 0px 10px 10px 0px;\n	position: absolute;\n	padding: 16px 13px 7px 12px;\n	z-index: 10;\n	font-size: 28px;\n	margin-left: 0px;\n	margin-top: 130px;\n	font-weight: bold;\n}\n#button-next {\n	height: 60px;\n	width: 40px;\n	border-radius: 10px 0px 0px 10px;\n	position: absolute;\n	padding: 16px 13px 7px 12px;\n	z-index: 10;\n	font-size: 28px;\n	margin-left: 960px;\n	margin-top: 130px;\n	font-weight: bold;\n}\n.main-content {\n	background-color: #F2F2F2;\n	padding: 15px 30px 60px 30px;\n	text-align: justify;\n	margin-top: 10px;\n}\n#page-title {\n	margin: -15px -30px;\n	margin-bottom: 0;\n	padding: 15px 30px;\n	background-color: #DBDBDB;\n	font-size: 28px;\n	text-align: left;\n}\n.col {\n	width: calc(33.3% - 20px);\n	float: left;\n	margin-left: 30px;\n	text-align: justify;\n}\n.footer_col {\n	width: calc(33.3% - 20px);\n	float: left;\n	margin-left: 30px;\n	text-align: justify;\n}\n.footer_col:first-child {\n	margin-left: 0;\n}\n.footer_col:last-child {\n	margin-right: 0;\n}\n.columns .col-text {\n	overflow: hidden;\n}\n.col button.read-more,\na.read-more,\n.colored-box .read-more {\n	text-transform: uppercase;\n	display: block;\n	border-radius: 10px;\n	padding: 10px;\n	margin: 20px auto -39px auto;\n}\n.main-content .col {\n	border-radius: 5px;\n	padding: 20px;\n}\n.main-content .col:first-child {\n	margin-left: 0;\n}\n.main-content .col:last-child {\n	margin-right: 0;\n}\nfooter .col:first-child {\n	margin-left: 0;\n}\nfooter.main-content .col:last-child {\n	margin-right: 0;\n}\n.col.gallery {\n	width: 212px;\n	margin-top: 30px;\n}\n.col.gallery a {\n	text-decoration: none;\n}\n.col.gallery:first-child {\n	margin-left: 30px;\n}\ndiv.full-width-img img {\n	max-width: 100%;\n	height: auto;\n}\n.clear {\n	clear: both;\n}\nfooter {\n}\n#footer-menu {\n	padding: 15px 30px;\n}\n#copyright {\n	background-color: rgba(53, 53, 53, .3);\n	padding: 15px 30px;\n}\n#menu-open {\n	display: none;\n}\nnav#main-menu.menu-active a#logo {\n	background: none;\n}\n@media screen and (max-device-width: 1000px), screen and (max-width: 1000px) {\n	.squeeze {\n		width: 100%;\n		padding: 0;\n	}\n	#page-title {\n		margin: -5px -30px;\n	}\n	#slider {\n		position: relative;\n		width: 100%;\n	}\n\n	#slider img {\n		width: 100%;\n		height: auto;\n	}\n	#button-next {\n		margin-left: calc(100% - 40px);\n	}\n	nav#main-menu {\n		position: relative;\n		width: auto;\n	}\n	img.logo {\n		float: left;\n	}\n	#websitename {\n		font-size: 16px;\n		margin-left: 60px;\n	}\n	#button-next {\n		margin-left: calc(100% - 40px);\n	}\n	.col,\n	.footer_col:first-child,\n	.footer_col {\n		padding: 0px;\n		margin: 15px;\n		width: auto;\n		padding-bottom: 15px;\n		border-bottom: 1px solid #316863;\n	}\n	.footer_col:last-child {\n		border: none;\n	}\n	.footer_col {\n		float: none;\n	}\n	.main-content {\n		margin-top: 0;\n	}\n	.main-content .col {\n		border-top: 0px solid #DBDBDB;\n		padding: 15px;\n		margin: 0 0 50px 0;\n	}\n	#content_right {\n		float: left;\n		width: 100%;\n	}\n	.col.gallery:first-child {\n		margin-left: 0;\n	}\n	.col.gallery {\n		margin-right: calc((100% - (3 * 212px)) / 2);\n	}\n	.col.gallery:nth-child(3n) {\n		margin-right: 0px;\n	}\n	#sidebar_left .views-exposed-form .form-type-bef-link a {\n		text-align: center;\n	}\n	#sidebar_left {\n		margin-bottom: 30px;\n		width: 100%;\n	}\n}\n@media screen and (max-device-width: 750px), screen and (max-width: 750px) {\n	.col,\n	.footer_col:first-child,\n	.footer_col {\n		padding: 0px;\n		margin: 15px 0px;\n		width: 100%;\n		padding-bottom: 15px;\n		border-bottom: 1px solid #316863;\n	}\n	.footer_col:last-child {\n		border: none;\n	}\n	.main-content {\n		margin-top: 0;\n	}\n	.main-content .col {\n		border-top: 0px solid #DBDBDB;\n		padding: 15px;\n		margin: 0 0 50px 0;\n	}\n	.col.gallery:first-child,\n	.col.gallery:nth-child(3n),\n	.col.gallery {\n		margin-left: calc((100% - (2 * 212px)) / 3);\n	}\n	#sidebar_left .views-exposed-form .form-type-bef-link a {\n		text-align: center;\n	}\n	#sidebar_left {\n		margin-bottom: 30px;\n		width: 100%;\n	}\n\n}\n@media screen and (max-device-width: 640px), screen and (max-width: 640px) {\n	.squeeze {\n		width: 100%;\n		padding: 0;\n	}\n	#slider {\n		display: none;\n	}\n	#page-title {\n		font-size: 21px;\n		text-align: center;\n	}\n	#menu-open {\n		position: absolute;\n		top: 0;\n		right: 0;\n		padding: 8px 5px 8px 11px;\n		height: 44px;\n		width: 44px;\n		display: block;\n	}\n	.icon-menu {\n		border-top: 15px double white;\n		border-bottom: 5px solid white;\n		height: 25px;\n		width: 25px;\n	}\n	nav#main-menu {\n		position: relative;\n		width: 100%;\n		margin-bottom: 0px;\n	}\n\n	nav#main-menu a,\n	nav#main-menu li {\n		float: none;\n		display: block;\n	}\n	img.logo {\n		float: none;\n	}\n	nav#main-menu .navigation {\n		display: none;\n	}\n	nav#main-menu.menu-active .navigation {\n		display: block;\n	}\n	nav#main-menu.menu-active ul,\n	nav#main-menu.menu-active a {\n		display: block;\n		background-color: #316863;\n	}\n	nav#main-menu ul {\n		float: none;\n		display: block;\n	}\n	#websitename {\n		font-size: 16px;\n		margin-left: 60px;\n	}\n	nav#main-menu a#logo {\n		display: block;\n	}\n	.prev a,\n	.next a {\n		position: relative;\n		left: 0;\n	}\n	.prev {\n		float: none;\n		margin-top: 40px;\n	}\n	.next {\n		margin-top: 40px;\n		margin-left: calc(100% - 100px);\n		float: none;\n	}\n	.prev + .next {\n		margin-top: -145px;\n	}\n@media screen and (max-device-width: 530px), screen and (max-width: 530px) {\n	.col.gallery:first-child,\n	.col.gallery:nth-child(3n),\n	.col.gallery {\n		float: none;\n		margin-left: calc((100% - 212px) / 2);\n	}\n}\n",
+			"file": "/private/var/folders/tg/xz4l9t1d4mjdqh0w8fp2v0nc0000gn/T/534f12a9-2d14-42db-a4e6-d54d567645ff/www/sites/all/themes/barneveld/css/style.css",
+			"file_size": 10654,
+			"file_write_time": 130759142750000000,
+			"settings":
+			{
+				"buffer_size": 10654,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: Install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/js",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/fonts",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/globals",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/partials",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates"
+	],
+	"file_history":
+	[
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/partials/_screen.scss",
+		"/Users/macbookpro/Downloads/domains 2/jordifuite.eu/public_html/Projects/Pimaude/Drupal/sites/default/settings.php",
+		"/Library/WebServer/Documents/pimaudefotografie/sites/default/settings.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/partials/_grid.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/js/behaviors.js",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/template.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/html.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/globals/_variables.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/views-view-unformatted--slider.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/style.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/partials/_header.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/page.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/modules/moxiemanager/moxiemanager.module",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/fonts/_font-awesome.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/node--portfolio_item.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/page--embed.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/jordifuite.info",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/block--embed.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/region--embed.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/sass/mixins/_utilities.scss",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/css/style.css",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/views-view-unformatted--portfolio_block.tpl.php",
+		"/Library/WebServer/Documents/phptoets/class/ticket.php",
+		"/private/etc/php.ini",
+		"/private/etc/apache2/httpd.conf",
+		"/Users/macbookpro/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/D27FFEE3-5DDE-400A-A293-73301A7BD1C4/newssite/class/base.php",
+		"/Library/WebServer/Documents/phptoets/class/base.php",
+		"/Library/WebServer/Documents/phptoets/class/user.php",
+		"/Library/WebServer/Documents/phptoets/class/article.php",
+		"/Library/WebServer/Documents/phptoets/css/font-awesome.css",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/pt.js",
+		"/Library/WebServer/Documents/phptoets/css/font-awesome.min.css",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/pt-br.js",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/gl.js",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/es.js",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/cy.js",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/lang/tr.js",
+		"/Library/WebServer/Documents/phptoets/includes/ckeditor/plugins/specialchar/dialogs/lang/cy.js",
+		"/Library/WebServer/Documents/jordifuite/.htaccess",
+		"/Library/WebServer/Documents/.htaccess",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/block--views--portfolio_block.tpl.php",
+		"/Library/WebServer/Documents/jordifuite/sites/all/themes/jordifuite/templates/block--views--block.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/js/youtube.js",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/block--block-2.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/block.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/partials/_grid.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/globals/_variables.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/style.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/nnordy.info",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/html.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/page.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-unformatted--films.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/node--portfolio_item.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/partials/_screen.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/mixins/_utilities.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/template.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/partials/_popup.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/js/jquery.tubular.1.0.js",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/js/behaviors.js",
+		"/Users/macbookpro/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Library/WebServer/Documents/nnordy/sites/default/settings.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/index.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/page--embed.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-fields.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-unformatted.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-field.tpl.php",
+		"/Applications/MAMP/htdocs/newssite/class/user.php",
+		"/Applications/MAMP/htdocs/newssite/class/base.php",
+		"/Applications/MAMP/htdocs/newssite/sass/partials/_screen.scss",
+		"/Applications/MAMP/htdocs/newssite/sass/globals/_variables.scss",
+		"/Applications/MAMP/htdocs/newssite/index.php",
+		"/Applications/MAMP/htdocs/newssite/class/article.php",
+		"/Applications/MAMP/htdocs/newssite/css/style.css",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/replacebyclass.html",
+		"/Applications/MAMP/bin/php/php5.6.2/conf/php.ini",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/plugins/enterkey/enterkey.html",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/plugins/magicline/magicline.html",
+		"/Applications/MAMP/htdocs/enquete/sass/partials/_screen.scss",
+		"/Applications/MAMP/htdocs/newssite/admin.php",
+		"/Applications/MAMP/htdocs/newssite/news.sublime-project",
+		"/Users/macbookpro/Downloads/Sibelius.v7.5.1.Multilingual.MacOSX-RBS/file_id.diz",
+		"/Applications/MAMP/htdocs/newssite/script.js",
+		"/Applications/MAMP/htdocs/newssite/css/style.css.map",
+		"/Applications/MAMP/htdocs/newssite/sass/style.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"footer_col",
+			"sliderbox",
+			"block-block-2",
+			"214px",
+			"bar",
+			"jordifuite",
+			"previous",
+			"$max",
+			"nnordy",
+			"render",
+			"0",
+			"blur",
+			"gd",
+			"png",
+			"file",
+			"apc",
+			"APC",
+			"png",
+			"--with-png-dir",
+			"php5_gd",
+			"php5-gd",
+			"php_gd2",
+			"add_news",
+			"comment",
+			"ticket",
+			"nid",
+			"articles.",
+			"db_num",
+			"db_select",
+			";\n",
+			";",
+			",",
+			"upload",
+			"post_max",
+			"upload_max_filesize",
+			"255",
+			"183",
+			"10px",
+			"320px",
+			"5px",
+			"15px",
+			"20px",
+			"330px",
+			"310px",
+			"330px",
+			"5px",
+			"1000px",
+			"#{",
+			"}px",
+			"$width",
+			";\n",
+			"?>\n",
+			"0",
+			"255",
+			"'embed'",
+			"response_type",
+			"'embed'",
+			"}\n",
+			">\n",
+			"$box-color, 10, 330, 5",
+			"bartik",
+			"}\n",
+			"ORDER",
+			"content='10",
+			"font-size",
+			"content='10",
+			"echo $owner",
+			"access(1,",
+			"access(",
+			"$this->l",
+			"<a href",
+			"error",
+			"*",
+			"8080"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"jordifuite",
+			"add_ticket",
+			"comment",
+			"tid",
+			"tickets.",
+			",",
+			";",
+			"\",\"",
+			"$width",
+			"",
+			"$popup-width",
+			"'response_type'",
+			"embed",
+			"1",
+			"nnordy",
+			"content='1",
+			"access(2,",
+			"8888"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "templates/node--portfolio_item.tpl.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5125,
+								5125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1421.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sass/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "sass/partials/_portfolio.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								554,
+								554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 61.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/page.tpl.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5766,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4339,
+								4339
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1363.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/private/var/folders/tg/xz4l9t1d4mjdqh0w8fp2v0nc0000gn/T/534f12a9-2d14-42db-a4e6-d54d567645ff/www/sites/all/themes/barneveld/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7996,
+								7996
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7230.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "JordiFuite Theme.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"news",
+				"news.sublime-project"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Library/WebServer/Documents/nnordy/nnordy.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 304.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,104 @@
+header {
+  img.logo {
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 35px;
+  @include breakpoint($mobile) {
+    margin-bottom: 0;
+    border-bottom: 6px solid $back3;
+    &.menu-active {
+      border: none;
+    }
+  }
+  .squeeze {
+    @include breakpoint($mobile) {
+      padding: 0;
+    }
+  }
+  .site-name {
+    padding-top: 10px;
+    @include breakpoint($mobile) {
+      padding: 10px 20px 0;
+    }
+    h1 {
+      margin: 0;
+      a {
+        font-size: 30px;
+        color: white;
+        font-family: Arial;
+        text-decoration: none;
+        font-weight: normal;
+      }
+    }
+  }
+  nav {
+    font-size: 11pt;
+    height: 35px;
+    background-color: $back3;
+    @include breakpoint($mobile) {
+      height: auto;
+      background: none;
+    }
+    ul {
+      margin: 0;
+      margin-left: -10px;
+      list-style-type: none;
+      padding: 0;
+      @include breakpoint($mobile) {
+        margin: 0;
+        display: none;
+      }
+      li {
+        margin: 0;
+        float: left;
+        padding: 9px 10px;
+        a,
+        a.active {
+          color: $font1;
+          // text-decoration: underline;
+        }
+        a {
+          text-decoration: none;
+          @include breakpoint($mobile) {
+            display: block;
+            background-color: $back3;
+            padding: 13px 20px;
+            height: 44px;
+          }
+        }
+        &:hover {
+          text-decoration: underline;
+          background-color: $hover3;
+        }
+        @include breakpoint($mobile) {
+          float: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    .menu-trigger {
+      display: none;
+      @include breakpoint($mobile) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 12px 17px;
+        width: 44px;
+        height: 46px;
+        font-size: 25px;
+        display: block;
+        float: none;
+        background-color: $back3;
+        padding-left: 10px;
+        color: $font1;
+        text-decoration: none;
+      }
+    }
+  }
+}

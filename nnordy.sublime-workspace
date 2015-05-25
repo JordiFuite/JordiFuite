@@ -1,0 +1,302 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"admin",
+				"admin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "sites/all/modules/views/theme/views-view-unformatted.tpl.php",
+			"settings":
+			{
+				"buffer_size": 384,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Library/WebServer/Documents/nnordy",
+		"/Library/WebServer/Documents/nnordy/sites",
+		"/Library/WebServer/Documents/nnordy/sites/all",
+		"/Library/WebServer/Documents/nnordy/sites/all/modules",
+		"/Library/WebServer/Documents/nnordy/sites/all/modules/views",
+		"/Library/WebServer/Documents/nnordy/sites/all/modules/views/theme"
+	],
+	"file_history":
+	[
+		"/Library/WebServer/Documents/nnordy_click/script.js",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/partials/_screen.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/node--portfolio_item.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/default/settings.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/nnordy.info",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/page.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/style.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/js/behaviors.js",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/index.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/sass/globals/_variables.scss",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/template.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/page--embed.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-fields.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-unformatted.tpl.php",
+		"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/templates/views-view-field.tpl.php",
+		"/Applications/MAMP/htdocs/newssite/class/user.php",
+		"/Applications/MAMP/htdocs/newssite/class/base.php",
+		"/Applications/MAMP/htdocs/newssite/sass/partials/_screen.scss",
+		"/Applications/MAMP/htdocs/newssite/sass/globals/_variables.scss",
+		"/Applications/MAMP/htdocs/newssite/index.php",
+		"/Applications/MAMP/htdocs/newssite/class/article.php",
+		"/Applications/MAMP/htdocs/newssite/css/style.css",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/replacebyclass.html",
+		"/Applications/MAMP/bin/php/php5.6.2/conf/php.ini",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/plugins/enterkey/enterkey.html",
+		"/Applications/MAMP/htdocs/newssite/includes/ckeditor/samples/plugins/magicline/magicline.html",
+		"/Applications/MAMP/htdocs/enquete/sass/partials/_screen.scss",
+		"/Applications/MAMP/htdocs/newssite/admin.php",
+		"/Applications/MAMP/htdocs/newssite/news.sublime-project",
+		"/Users/macbookpro/Downloads/Sibelius.v7.5.1.Multilingual.MacOSX-RBS/file_id.diz",
+		"/Applications/MAMP/htdocs/newssite/script.js",
+		"/Applications/MAMP/htdocs/newssite/css/style.css.map",
+		"/Applications/MAMP/htdocs/newssite/sass/style.scss"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"#{",
+			"}px",
+			"$width",
+			";\n",
+			"?>\n",
+			"0",
+			"255",
+			"'embed'",
+			"response_type",
+			"'embed'",
+			"}\n",
+			">\n",
+			"$box-color, 10, 330, 5",
+			"bartik",
+			"}\n",
+			"ORDER",
+			"content='10",
+			"font-size",
+			"content='10",
+			"echo $owner",
+			"access(1,",
+			"access(",
+			"$this->l",
+			"<a href",
+			"error",
+			"*",
+			"8080"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"$popup-width",
+			"'response_type'",
+			"embed",
+			"1",
+			"nnordy",
+			"content='1",
+			"access(2,",
+			"8888"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "sites/all/modules/views/theme/views-view-unformatted.tpl.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nnordy.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"news",
+				"news.sublime-project"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Library/WebServer/Documents/nnordy/sites/all/themes/nnordy/nnordy-theme.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

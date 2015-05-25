@@ -1,0 +1,16 @@
+
+name = JordiFuite
+description = A flexible, theme for JordiFuite's new website.
+core = 7.x
+
+stylesheets[all][] = css/style.css
+stylesheets[print][] = css/print.css
+
+regions[header] = Header
+regions[menu] = Menu
+
+regions[slider] = Slider
+regions[content] = Content
+regions[content_bottom] = 'Content Bottom'
+
+regions[footer] = Footer

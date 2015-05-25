@@ -1,0 +1,240 @@
+* {
+	@include box-sizing(border-box);
+}
+html {
+	padding: 0;
+	height: 100%;
+}
+body {
+	position: relative;
+	font-family: arial;
+	background-color: $back1;
+	padding: 0 0 50px 0;
+	margin: 0;
+	font-size: 8pt;
+	height: 100%;
+	zoom: 1.15;
+	@include breakpoint($normal-screen) {
+		font-size: 9pt;
+		zoom: 1;
+	}
+	header {
+
+	}
+}
+h2,
+.portfolio-detail h3 {
+	text-transform: uppercase;
+	font-size: 20px;
+	color: $font2;
+	font-family: Arial;
+	font-weight: normal;
+}
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+.element-invisible {
+	display: none !important;
+}
+
+.squeeze {
+	@include center-block();
+	width: $width;
+	padding: 0 20px;
+	@include breakpoint($smaller_than_site) {
+		width: 100%;
+	}
+}
+
+section.top-text {
+	padding: 0 50px 25px 50px;
+}
+
+img {
+	@include breakpoint($mobile) {
+		width: 100% !important;
+		height: auto;
+		display: block;
+		float: none;
+	}
+}
+
+.main-wrapper {
+	background-color: $back2;
+	padding: 25px 0;
+}
+
+.inline-left {
+	float: left;
+	margin: 0 30px 30px 0;
+}
+
+
+.table {
+	@include clearfix();
+}
+.column {
+	@include breakpoint($all-but-mobile) {
+		margin-left: -24px;
+		margin-right: 39px;
+		border-left: 4px solid $back3;
+		width: calc(33%);
+		padding: 0 0px 0 20px;
+		float: left;
+		height: 147px;
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+	@include breakpoint($mobile) {
+		border-bottom: 4px solid $back3;
+		margin-bottom: 10px;
+		width: 100%;
+		&.views-row-last {
+			margin: 0;
+			border: none;
+		}
+	}
+	text-align: justify;
+	&.views-row-last {
+		margin-right: 0;
+	}
+}
+#big-wrapper {
+	display: none;
+}
+
+.slider-wrapper {
+	position: relative;
+	@include breakpoint($mobile) {
+		display: none;
+	}
+	.squeeze {
+		padding: 0 75px;
+		height: 340px;
+		.region-slider {
+			position: relative;
+			.sub-wrapper {
+				position: relative;
+			}
+		}
+		.slider-item {
+			position: absolute;
+			display: none;
+			img {
+				border: 5px solid white;
+			}
+			a,
+      span {
+				display: block;
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				background-color: rgba(43, 43, 43, 0.68);
+				width: 840px;
+				height: 50px;
+				padding: 10px;
+				color: $font1;
+				font-weight: bold;
+				font-size: 30px;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+			&.active {
+
+			}
+		}
+		margin-bottom: 40px;
+	}
+	button {
+		position: absolute;
+		z-index: 1;
+		background: gray;
+		padding: 20px;
+		font-size: 60px;
+		color: $back1;
+		height: 113px;
+		top: 113.5px;
+		transition: background 0.5s;
+		font-family: arial;
+		border: none;
+		margin: 0;
+		&:hover {
+			background: $back2;
+			color: $back1;
+		}
+		&.previous {
+			left: 0;
+		}
+		&.next {
+			right: 0;
+		}
+	}
+}
+
+.form-text,
+.form-textarea {
+	border: 1px solid #bababa;
+	padding: 10px;
+	margin: 0;
+}
+.form-text {
+	height: 40px;
+}
+.form-textarea {
+	height: 160px;
+}
+.form-submit {
+	display: inline-block;
+	margin: 20px auto 0;
+	text-align: center;
+	border: none;
+	background-color: $back3;
+	color: $font1;
+	font-size: 15px;
+	padding: 15px;
+	text-decoration: none;
+	@include transition(background-color, .25s, ease-in-out);
+	&:hover,
+	&:focus {
+		background-color: $hover3;
+	}
+}
+
+.webform-client-form {
+	margin-top: 12px;
+	@include clearfix();
+	fieldset {
+		border: none;
+		padding: 0;
+		margin: 0;
+		height: 160px;
+		&:first-child {
+			float: left;
+			margin: 0 20px 0 0;
+			@include breakpoint($mobile) {
+				float: none;
+				margin: 0 0 20px 0;
+				.form-text {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.webform-component,
+	.form-actions {
+		margin: 0 0 20px 0;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	color: $font1;
+}

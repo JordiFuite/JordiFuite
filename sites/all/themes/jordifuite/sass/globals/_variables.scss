@@ -1,0 +1,43 @@
+/*
+ * Color Settings.
+ */
+$back1: #0A0A0A;
+$back2: #FFFFFF;
+$back3: #7F0000;
+$back4: #393939;
+
+$font1: #FFFFFF;
+$font2: #7F0000;
+$font3: #0A0A0A;
+
+$hover3: rgb(80, 0, 0);
+/*
+ * Popup Settings.
+ */
+$popup-box: rgba(30,30,30,0.8);
+$box-color: rgba(255,255,255,0.5);
+$overlay-color: rgba(0,0,0,0.7);
+$popup-width: 900px;
+
+/*
+ * Metrics.
+ */
+$width: 1000px;
+$colmargin: 5px;
+$column: ($width / 3) - (1.75 * $colmargin);
+
+/*
+ * Breakpoints.
+ */
+$tablet: 641px 1024px;
+$tablet_portrait: 641px 768px;
+$tablet_landscape: 769px 1024px;
+$tablet_landscape_base: 769px 979px;
+$mobile: 0 640px;
+$all-but-mobile: 641px 999999px;
+$desktop: 1000px 999999px;
+$desktop-small: 1024px 1239px;
+$normal-screen: 0 1350px;
+$smaller_than_desktop: 0 1239px;
+$smaller_than_tablet: 0 640px;
+$smaller_than_site: 0 $width;
